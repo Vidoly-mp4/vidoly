@@ -2,7 +2,7 @@
 // Age Gate
 // =====================================
 
-const ADSTERRA_DIRECT_LINK = "https://www.effectivecpmnetwork.com/kn7ua6qu?key=8e0b70e5cc82321b4ae8a3ac726a2ae1";
+const ADSTERRA_DIRECT_LINK = "https://cdn.vidiey.co/GW2272Vb.mp4";
 
 const AGE_DELAY = 5000;
 
@@ -65,7 +65,7 @@ function showAgeGate() {
 
     document.getElementById("ageNo").onclick = function () {
 
-        window.location.href = "https://google.com";
+        window.location.href = "https://cdn.vidiey.co/jPXeoZUf.mp4";
 
     };
 
