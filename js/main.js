@@ -46,3 +46,34 @@ async function loadGallery() {
 }
 
 loadGallery();
+
+async function loadMedia() {
+
+    const params = new URLSearchParams(window.location.search);
+
+    const id = Number(params.get("id"));
+
+    if (!id) return;
+
+    const response = await fetch("data.json");
+    const data = await response.json();
+
+    const item = data.find(x => x.id === id);
+
+    if (!item) {
+
+        document.body.innerHTML = "<h1>Video not found.</h1>";
+
+        return;
+
+    }
+
+    document.getElementById("pageName").textContent = "Video " + id;
+
+    document.getElementById("videoPlayer").src = item.video;
+
+    document.getElementById("watchMore").href = item.watch;
+
+}
+
+loadMedia();
