@@ -28,13 +28,26 @@ header{
 .card{
     position:relative;
     cursor:pointer;
-    border:3px solid black;
     background:white;
+    overflow:hidden;
+    border-radius:12px;
+    transition:.25s;
+    box-shadow:0 2px 8px rgba(0,0,0,.12);
 }
 
 .card img{
     width:100%;
+    aspect-ratio:16 / 9;
+    object-fit:cover;
     display:block;
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 12px 24px rgba(0,0,0,.18);
+
 }
 
 .play-button{
@@ -177,7 +190,11 @@ header{
 }
 
 .content-item img{
-    width:120px;
+    width:140px;
+    aspect-ratio:16 / 9;
+    object-fit:cover;
+    border-radius:6px;
+    border:1px solid #ccc;
 }
 
 .content-buttons{
@@ -188,4 +205,142 @@ header{
 .content-buttons button{
     padding:10px 20px;
     cursor:pointer;
+}
+
+dialog{
+
+    width:500px;
+
+    border:none;
+
+    border-radius:10px;
+
+    padding:25px;
+
+}
+
+dialog input{
+
+    width:100%;
+
+    padding:12px;
+
+    margin:10px 0;
+
+}
+
+dialog button{
+
+    padding:12px 20px;
+
+    cursor:pointer;
+
+}
+
+.thumbnail-preview{
+
+    width:100%;
+
+    aspect-ratio:16/9;
+
+    object-fit:cover;
+
+    border:2px dashed #bbb;
+
+    border-radius:8px;
+
+    margin:12px 0;
+
+    background:#fafafa;
+
+}
+
+input[type=file]{
+
+    width:100%;
+
+    margin-bottom:15px;
+
+}
+
+/* ---------------- Login ---------------- */
+
+#loginScreen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#f5f5f5;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+.login-box{
+
+    width:320px;
+
+    background:#fff;
+
+    padding:25px;
+
+    border-radius:10px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+.login-box h2{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+}
+
+.login-box input{
+
+    width:100%;
+
+    margin-bottom:12px;
+
+    padding:10px;
+
+    box-sizing:border-box;
+
+}
+
+.login-box button{
+
+    width:100%;
+
+    padding:10px;
+
+    cursor:pointer;
+
+}
+
+#loginError{
+
+    color:red;
+
+    text-align:center;
+
+    margin-top:10px;
+
+    min-height:20px;
+
+}
+
+#adminPanel{
+
+    display:none;
+
 }

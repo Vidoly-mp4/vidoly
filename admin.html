@@ -3,17 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel</title>
+    <title>Vidoly Admin Panel</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header>
-    <h1>Admin Panel</h1>
+    <!-- ============================= -->
+<!-- Login Screen -->
+<!-- ============================= -->
+
+<div id="loginScreen">
+
+    <div class="login-box">
+
+        <h2>Admin Login</h2>
+
+        <input
+            type="text"
+            id="username"
+            placeholder="Username">
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Password">
+
+        <button id="loginBtn">
+            Login
+        </button>
+
+        <p id="loginError"></p>
+
+    </div>
+
+</div>
+
+<div id="adminPanel">
+
+<header class="admin-header">
+    <h1>Vidoly Admin Panel</h1>
 </header>
 
 <main class="admin">
+
+    <!-- Statistics -->
 
     <section class="stats">
 
@@ -34,21 +68,29 @@
 
     </section>
 
+    <!-- Buttons -->
+
     <section class="actions">
 
         <button id="addVideoBtn">
-            Add Video
+            ➕ Add Video
         </button>
 
         <button id="addImageBtn">
-            Add Image
+            🖼 Add Image
+        </button>
+
+        <button id="exportBtn">
+            💾 Export data.json
         </button>
 
     </section>
 
-    <section>
+    <!-- Content -->
 
-        <h2>Content</h2>
+    <section class="content-section">
+
+        <h2>Content Library</h2>
 
         <div id="contentList">
 
@@ -58,6 +100,151 @@
 
 </main>
 
+<!-- ============================= -->
+<!-- Add/Edit Video Dialog -->
+<!-- ============================= -->
+
+<dialog id="videoDialog">
+
+    <form method="dialog" id="videoForm">
+
+        <h2 id="videoDialogTitle">Add Video</h2>
+
+        <input
+            id="videoLink"
+            type="url"
+            placeholder="Videy Embed URL"
+            required>
+
+        <label>Thumbnail</label>
+
+        <img
+            id="videoPreview"
+            class="thumbnail-preview"
+            src="https://placehold.co/400x225?text=No+Image"
+            alt="Preview">
+
+        <input
+            id="videoThumbnail"
+            type="file"
+            accept="image/*">
+
+        <input
+            id="watchMoreLink"
+            type="url"
+            placeholder="Watch More (Blogger URL)"
+            required>
+
+        <div class="dialog-buttons">
+
+            <button
+                type="button"
+                id="saveVideo">
+
+                Save
+
+            </button>
+
+            <button
+                type="button"
+                onclick="document.getElementById('videoDialog').close()">
+
+                Cancel
+
+            </button>
+
+        </div>
+
+    </form>
+
+</dialog>
+
+<!-- ============================= -->
+<!-- Add/Edit Image Dialog -->
+<!-- ============================= -->
+
+<dialog id="imageDialog">
+
+    <form method="dialog" id="imageForm">
+
+        <h2 id="imageDialogTitle">Add Image</h2>
+
+        <label>Thumbnail</label>
+
+        <img
+            id="imagePreview"
+            class="thumbnail-preview"
+            src="https://placehold.co/400x225?text=No+Image"
+            alt="Preview">
+
+        <input
+            id="imageThumbnail"
+            type="file"
+            accept="image/*">
+
+        <input
+            id="imageLink"
+            type="url"
+            placeholder="Destination Blogger URL"
+            required>
+
+        <div class="dialog-buttons">
+
+            <button
+                type="button"
+                id="saveImage">
+
+                Save
+
+            </button>
+
+            <button
+                type="button"
+                onclick="document.getElementById('imageDialog').close()">
+
+                Cancel
+
+            </button>
+
+        </div>
+
+    </form>
+
+</dialog>
+
+<!-- ============================= -->
+<!-- Delete Confirmation -->
+<!-- ============================= -->
+
+<dialog id="deleteDialog">
+
+    <h2>Delete Item?</h2>
+
+    <p>
+        This action cannot be undone.
+    </p>
+
+    <div class="dialog-buttons">
+
+        <button id="confirmDelete">
+
+            Delete
+
+        </button>
+
+        <button onclick="document.getElementById('deleteDialog').close()">
+
+            Cancel
+
+        </button>
+
+    </div>
+
+</dialog>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script src="js/admin.js"></script>
 
 </body>

@@ -1,16 +1,21 @@
 [
-  {
-    "id": 1,
-    "type": "video",
-    "thumbnail": "https://placehold.co/400x250",
-    "video": "https://videy.co/v/?id=pnUQ0I1f1",
-    "watch": "https://example.com"
-  },
-  {
-    "id": 2,
-    "type": "image",
-    "thumbnail": "https://placehold.co/400x250",
-    "link": "https://example.com"
-  }
-  
+    {
+        "id": 3,
+        "type": "image",
+        "thumbnail": "thumbnails/20260725195653846.png",
+        "link": "https://vidoly-mp4.github.io/vidoly/"
+    },
+    {
+        "id": 2,
+        "type": "image",
+        "thumbnail": "thumbnails/20260725195643468.png",
+        "link": "https://vidoly-mp4.github.io/vidoly/"
+    },
+    {
+        "id": 1,
+        "type": "video",
+        "thumbnail": "thumbnails/20260725194743300.jpeg",
+        "video": "https://videy.co/v/?id=pnUQ0I1f1",
+        "watch": "https://vidoly-mp4.github.io/vidoly/"
+    }
 ]
